@@ -8,7 +8,7 @@ from app.recipes.cinema_alchemist import CinemaAlchemist
 
 # Database and output directory paths
 DB_PATH = './file_state.db'  # SQLite database for state storage
-OUTPUT_DIR = './output'  # Output directory for processed files
+OUTPUT_DIR = '/mnt/local_buffer'  # Output directory for processed files
 MKV_DIR = '/mnt/local_media/movies'  # Directory containing .mkv files
 LOG_FILE = './logs/process.log'  # Path to the log file
 
