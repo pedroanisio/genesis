@@ -1,17 +1,8 @@
-# Filename: test_atoms.py\n# Path: project_root/tests/test_atoms.py\n# Log Level: INFO\n
+
 import unittest
 import os
-from app.atoms.create_directory_atom import CreateDirectoryAtom
 from app.atoms.create_file_atom import CreateFileAtom
-
-class TestCreateDirectoryAtom(unittest.TestCase):
-    def test_process(self):
-        atom = CreateDirectoryAtom()
-        data = {'dir_name': 'test_dir'}
-        result = atom.process(data)
-        self.assertTrue(os.path.exists('test_dir'))
-        self.assertEqual(result['status'], "Directory 'test_dir' ensured.")
-        os.rmdir('test_dir')
+import shutil
 
 class TestCreateFileAtom(unittest.TestCase):
     def test_process(self):
@@ -25,5 +16,8 @@ class TestCreateFileAtom(unittest.TestCase):
             content = f.read()
         self.assertEqual(content, 'test content')
         os.remove(file_path)
-        os.rmdir('test_dir')
+        shutil.rmtree('test_dir')
+
+if __name__ == '__main__':
+    unittest.main()
 

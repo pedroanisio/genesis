@@ -3,6 +3,7 @@ import unittest
 from app.molecules.base_molecule import SequentialMolecule
 from app.atoms.create_directory_atom import CreateDirectoryAtom
 from app.atoms.create_file_atom import CreateFileAtom
+import os
 
 class TestSequentialMolecule(unittest.TestCase):
     def test_run(self):
